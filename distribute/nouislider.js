@@ -1,4 +1,4 @@
-/*! nouislider - 10.0.0 - 2017-05-28 14:52:48 */
+/*! nouislider - 10.0.0 - 2017-06-23 12:53:25 */
 
 (function (factory) {
 
@@ -1665,7 +1665,7 @@ function closure ( target, options, originalOptions ){
 		event.stopPropagation();
 
 		// Attach the move and end events.
-		var moveEvent = attachEvent(actions.move, scope_DocumentElement, eventMove, {
+		var moveEvent = attachEvent(actions.move, scope_Target, eventMove, {
 			startCalcPoint: event.calcPoint,
 			baseSize: baseSize(),
 			pageOffset: event.pageOffset,
@@ -1674,11 +1674,11 @@ function closure ( target, options, originalOptions ){
 			locations: scope_Locations.slice()
 		});
 
-		var endEvent = attachEvent(actions.end, scope_DocumentElement, eventEnd, {
+		var endEvent = attachEvent(actions.end, scope_Target, eventEnd, {
 			handleNumbers: data.handleNumbers
 		});
 
-		var outEvent = attachEvent("mouseout", scope_DocumentElement, documentLeave, {
+		var outEvent = attachEvent("mouseout", scope_Target, documentLeave, {
 			handleNumbers: data.handleNumbers
 		});
 

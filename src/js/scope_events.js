@@ -80,7 +80,7 @@
 		event.stopPropagation();
 
 		// Attach the move and end events.
-		var moveEvent = attachEvent(actions.move, scope_DocumentElement, eventMove, {
+		var moveEvent = attachEvent(actions.move, scope_Target, eventMove, {
 			startCalcPoint: event.calcPoint,
 			baseSize: baseSize(),
 			pageOffset: event.pageOffset,
@@ -89,11 +89,11 @@
 			locations: scope_Locations.slice()
 		});
 
-		var endEvent = attachEvent(actions.end, scope_DocumentElement, eventEnd, {
+		var endEvent = attachEvent(actions.end, scope_Target, eventEnd, {
 			handleNumbers: data.handleNumbers
 		});
 
-		var outEvent = attachEvent("mouseout", scope_DocumentElement, documentLeave, {
+		var outEvent = attachEvent("mouseout", scope_Target, documentLeave, {
 			handleNumbers: data.handleNumbers
 		});
 
